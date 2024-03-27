@@ -93,6 +93,14 @@ contract CCQueryUC is UniversalChanIbcApp {
             return AckPacket(true, abi.encode(_ackData));
         }
         */
+
+        recvedPackets.push(UcPacketWithChannel(channelId, packet));
+
+        (address sender, string memory query) = abi.decode(packet.appData, (address, string));
+
+        bytes memory payload = abi.encode(sender, "mint");
+
+        return AckPacket(true, payload);
     }
 
     /**

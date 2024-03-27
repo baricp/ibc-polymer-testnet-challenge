@@ -88,6 +88,14 @@ run-challenge-3:
     just send-packet optimism
     echo "Thank you for participating in Challenge!"
     echo "Submit your evidence in the #proof channel in our Discord Server!"
+
+run-challenge-4:
+    echo "Running the challenge 4 flow..."
+    just deploy base base
+    just sanity-check
+    just send-packet optimism
+    echo "Thank you for participating in Challenge!"
+    echo "Submit your evidence in the #proof channel in our Discord Server!"
     
 # Clean up the environment by removing the artifacts and cache folders and running the forge clean command
 # Usage: just clean
